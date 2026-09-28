@@ -4,3 +4,8 @@ test-results/
 coverage/
 .env
 .env.*
+
+mobile/.claude/
+mobile/AGENTS.md
+mobile/CLAUDE.md
+mobile/LICENSE
