@@ -6,6 +6,8 @@ This document records the requirements for running the BlockPay QA Proof of Conc
 
 The POC uses placeholder applications and does not contain BlockPay production business logic.
 
+This proof of concept is discovery work intended to validate the suitability of the selected automated-testing tools. It does not define or enforce the production testing architecture for BlockPay. Any production integration, test conventions, CI configuration, or adoption decisions should be reviewed with the development team.
+
 ## 1. Web POC — Playwright
 
 ### Requirements
@@ -109,3 +111,16 @@ The Expo placeholder application was created successfully and Metro Bundler star
 However, the Android emulator repeatedly displayed `Process system isn't responding`, preventing a stable Maestro test execution.
 
 The Maestro smoke-test flow was therefore created, but a successful Maestro UI test execution is not claimed.
+
+## Proposed Production Test Conventions
+
+As this POC is discovery work, the following are recommendations for future consideration:
+
+- Keep web, API, and mobile automated tests separated by test layer.
+- Use clear test names that describe the expected behaviour.
+- Keep smoke tests small and focused on critical functionality.
+- Avoid hard-coded credentials, secrets, and environment-specific values.
+- Retain useful failure artifacts such as reports, screenshots, videos, and traces where supported.
+- Keep tests independent so that one test failure does not unnecessarily affect others.
+
+These conventions are proposals only and should be reviewed and agreed with the development team before being adopted or enforced in the BlockPay production environment.
